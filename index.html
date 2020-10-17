@@ -6,21 +6,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="main.css">
 <script src="script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 </head>
 
-<body>
+<body onload="alert('WARNING: Do not click on my ocular sensor!!!');">
 
     <header>
-        <H1>Grumpy Robot</H1>
+        <H1>Grumpy Robot Co.</H1>
+        <img src="Media/blue-eye.svg" class="eye" id="eye" onmouseout="mouseOut();" onmouseover="mouseOver();" onclick="changeImage();playSound('Media/Take Control.mp3');">
+        <aside id="box"></aside>
     </header>
 
     <span id="slayer"></span>
 
-    <button class="button"  onclick="playSound('Media/Take Control.mp3');">
-        <img src="Media/blue-eye.svg" id="eye" >
-    </button>
+<section>
+    <nav>
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#robotworkshops">Robot Workshops</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>  
+    </nav>
 
-    <p id="speech">Don't touch my ocular sensor!</p>
+    <article>
+        <div class="bodytext">
+            <h2 class="articlehead">Meet Cozmo 2.0</h2>
+            <br>
+            <p>New and improved, Cozmo is a real-life robot like you've only seen in the movies and he's ready to be your loyal sidekick!</p>
+            <br>
+            <p>With a beginner-friendly interface, Cozmo is the perfect educational robot for kids and adults to learn to creatively code.</p>
+            <br>
+        </div>
+        <div class="fotorama" id="cozmoimg" data-nav="hide" data-autoplay="true">
+            <img src="Media/vector1.jpg" width="150px" height="150px">
+            <img src="Media/vector2.jpg" width="150px" height="150px">
+            <img src="Media/vector3.jpg" width="150px" height="150px">
+        </div>
+    </article>
+</section>
+
+    <footer>
+        <p>Footer</p>
+    </footer>
 
 </body>
 

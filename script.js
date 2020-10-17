@@ -3,23 +3,26 @@ function playSound(soundfile) {
       "<embed src=\""+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"true\" />";
 };
 
-// function change (index) { 
-//     const links = [ 'Media/blue-eye.svg', 'Media/red-eye.svg' ]; 
-//     let index = 0; const img = document.querySelector('#eye'); 
-//     img.addEventListener('click', () => { index++; img.src = links[index]; }); 
-// } 
+changeImage = function() {
+    var image = document.getElementById('eye');
+    var blue = 'Media/blue-eye.svg';
+    var red = 'Media/red-eye.svg';
+   
+    if (image.getAttribute('src')==blue) {
+        image.setAttribute('src', red);
+     } else {
+        image.setAttribute('src', blue);
+     }
+  }
 
-var count = 5;
-var image = document.getElementById('eye');
-var images = ['Media/blue-eye.svg', 'Media/red-eye.svg'];
-image.src = images[0];
+document.getElementById("eye").onmouseover = function() {mouseOver()};
+document.getElementById("eye").onmouseout = function() {mouseOut()};
 
-image.onclick = function(e)
-{
-    if(count > 4)
-        image.src = images[0];
-    else (count > 5)
-        image.src = images[1];
+function mouseOver() {
+  document.getElementById("eye").style.boxShadow = "#63BBD9 0px 0px 10px 5px";
+}
 
-    count--;
-};
+function mouseOut() {
+    document.getElementById("eye").style.boxShadow = "0px 0px 0px 0px";
+  }
+
